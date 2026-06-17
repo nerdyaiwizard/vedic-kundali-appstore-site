@@ -3,15 +3,65 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vedic Kundali Support</title>
+  <title>Vedic Kundli Support</title>
   <style>
-    body { font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; max-width: 760px; margin: 48px auto; padding: 0 20px; line-height: 1.6; color: #111827; }
+    :root {
+      color-scheme: light;
+      --bg: #f7f1e8;
+      --bg2: #eef3f8;
+      --card: rgba(255, 255, 255, 0.84);
+      --text: #17161a;
+      --muted: #5d5563;
+      --accent: #9a4b1c;
+      --accent2: #0e6b6b;
+      --border: rgba(23, 22, 26, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(154, 75, 28, 0.12), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(14, 107, 107, 0.10), transparent 32%),
+        linear-gradient(135deg, var(--bg), var(--bg2));
+      min-height: 100vh;
+    }
+    main { max-width: 760px; margin: 0 auto; padding: 40px 20px 56px; }
+    .hero, .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: 0 14px 36px rgba(23, 22, 26, 0.08);
+      backdrop-filter: blur(12px);
+      padding: 24px;
+    }
+    .card { margin-top: 18px; }
+    h1, h2 { line-height: 1.1; margin-top: 0; }
+    h1 { margin-bottom: 10px; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.04em; }
+    p { line-height: 1.65; margin: 0 0 12px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: 0.16em; font-size: 0.74rem; color: var(--accent2); margin-bottom: 12px; font-weight: 700; }
+    .muted { color: var(--muted); }
+    a { color: var(--accent); }
+    @media (max-width: 640px) {
+      main { padding: 18px 14px 36px; }
+      .hero, .card { border-radius: 20px; }
+    }
   </style>
 </head>
 <body>
-  <h1>Support</h1>
-  <p>For help with chart entry, App Store issues, or bug reports, email <a href="mailto:shubham4991816@gmail.com">shubham4991816@gmail.com</a>.</p>
-  <p>Phone: +91 79052 88718</p>
-  <p>Please include the app version, device model, and a brief description of the issue.</p>
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Support</div>
+      <h1>Help with Vedic Kundli.</h1>
+      <p>Email <a href="mailto:shubham4991816@gmail.com">shubham4991816@gmail.com</a> for chart-entry issues, bug reports, or App Store review follow-up.</p>
+      <p class="muted">Last updated: June 17, 2026</p>
+    </section>
+
+    <section class="card">
+      <h2>What to include</h2>
+      <p>Please include the app version, device model, and a short description of the problem. If the issue involves a chart, include fictional sample input rather than personal birth details.</p>
+    </section>
+  </main>
 </body>
 </html>
