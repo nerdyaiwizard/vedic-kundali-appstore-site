@@ -57,20 +57,21 @@
     <section class="hero">
       <div class="eyebrow">Methodology</div>
       <h1>How the chart is calculated.</h1>
-      <p>Last updated: June 17, 2026</p>
+      <p>Last updated: November 23, 2026</p>
       <p>Vedic Kundli uses a hosted Python backend with deterministic astronomy and Vedic chart settings. The app is designed to make the calculation path traceable instead of opaque.</p>
     </section>
 
     <section class="card">
       <h2>Calculation stack</h2>
       <ul>
-        <li>Skyfield with the JPL DE440 ephemeris for planetary positions</li>
+        <li>Skyfield with the JPL DE440 ephemeris for apparent geocentric planetary positions. Elevation is stored with the place but is not applied to the positions or the ascendant.</li>
         <li>PyERFA for Earth orientation and precession-related formulas</li>
-        <li>Python <code>zoneinfo</code> for timezone and DST rules</li>
-        <li>ICRC Lahiri ayanamsa</li>
+        <li>Python <code>zoneinfo</code> for timezone and DST rules. Birth time is civil wall-clock time in the IANA zone, not local mean time.</li>
+        <li>ICRC Lahiri ayanamsa: 23.853222 degrees at J2000 plus IAU 2006 general precession in longitude. This zero point is about 14 arcseconds from the Swiss Ephemeris Lahiri value.</li>
         <li>Mean lunar node with Ketu exactly opposite Rahu</li>
-        <li>Whole-sign houses</li>
-        <li>Vimshottari dasha sequencing</li>
+        <li>Whole-sign houses. The ascendant is the ecliptic point rising on the eastern horizon, including latitudes where the raw trigonometric result is the descendant.</li>
+        <li>D9 Navamsha from the sidereal longitude, using the standard movable, fixed, and dual sign starts</li>
+        <li>Vimshottari mahadasha and antardasha. Yogas, doshas, and panchang are not calculated.</li>
       </ul>
     </section>
 
